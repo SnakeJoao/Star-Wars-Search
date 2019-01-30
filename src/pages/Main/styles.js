@@ -5,6 +5,16 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 60px;
+
+  small {
+    padding-top: 10px;
+    color: #fff;
+  }
+
+  a {
+    color: #f9d71c;
+    text-align: center;
+  }
 `;
 
 export const Form = styled.form`
@@ -16,7 +26,7 @@ export const Form = styled.form`
   input {
     flex: 1;
     height: 55px;
-    padding: 0 20px;
+    padding: 0 5px;
     background: #fff;
     font-size: 18px;
     color: #444;
@@ -41,15 +51,18 @@ export const Form = styled.form`
     height: 55px;
     padding: 0 20px;
     margin-left: 10px;
-    background: red;
+    background: #f9d71c;
     color: #fff;
     border: 0;
     font-size: 20px;
     font-weight: bold;
     border-radius: 3px;
+    opacity: 0.8;
+    transition: 0.5s;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 1;
+      transition: 0.3s;
     }
   }
 `;

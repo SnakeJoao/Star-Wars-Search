@@ -4,7 +4,7 @@ import api from '../../services/api';
 import logo from '../../assets/logo.png';
 
 import { Container, Form } from './styles';
-import CompareList from '../../components/CompareList';
+import RequestList from '../../components/RequestList';
 
 export default class Main extends Component {
   state = {
@@ -30,8 +30,6 @@ export default class Main extends Component {
         typeRequest: this.state.requestSelect,
       };
 
-      console.log(finalResult);
-
       this.setState({
         requestApiError: false,
         requestSelect: 'people',
@@ -55,9 +53,9 @@ export default class Main extends Component {
             value={this.state.requestSelect}
             onChange={e => this.setState({ requestSelect: e.target.value })}
           >
-            <option value="people">Pessoas</option>
-            <option value="planets">Planetas</option>
-            <option value="starships">Naves</option>
+            <option value="people">Personagem</option>
+            <option value="planets">Planeta</option>
+            <option value="starships">Nave</option>
           </select>
           <input
             type="text"
@@ -69,8 +67,12 @@ export default class Main extends Component {
             {this.state.loading ? <i className="fa fa-spinner fa-pulse" /> : 'Enviar'}
           </button>
         </Form>
+        <small>
+          Você também pode pesquisar por
+          <a href="/films"> Filmes</a>
+        </small>
 
-        <CompareList requests={this.state.requests} />
+        <RequestList requests={this.state.requests} />
       </Container>
     );
   }
